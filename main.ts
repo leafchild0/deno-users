@@ -1,11 +1,11 @@
-import { Application, RouterContext } from "./deps.ts";
+import { Application, Context } from "./deps.ts";
 import { AppDataSource } from "./src/config.ts";
 import userRoutes from "./src/routes.ts";
 
 const app = new Application();
 
 // Error handling middleware
-app.use(async (ctx: RouterContext, next: () => Promise<unknown>) => {
+app.use(async (ctx: Context, next: () => Promise<unknown>) => {
   try {
     await next();
   } catch (err) {

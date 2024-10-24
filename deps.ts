@@ -3,10 +3,10 @@ export {
   DataSource,
   Entity,
   PrimaryGeneratedColumn,
-} from "npm:typeorm@0.3.20";
+} from "typeorm";
 export {
   Application,
   Router,
-  RouterContext,
-} from "https://deno.land/x/oak@v13.2.5/mod.ts";
+  Context,
+} from "oak";
 export { config } from "https://deno.land/x/dotenv@v3.2.2/mod.ts";

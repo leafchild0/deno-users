@@ -20,4 +20,9 @@ export class UserController {
     const userRepository = AppDataSource.getRepository(User);
     return await userRepository.findOne({ where: { id } });
   }
+
+  static async deleteById(id: number) {
+    const userRepository = AppDataSource.getRepository(User);
+    return await userRepository.delete(id);
+  }
 }
