@@ -1,19 +1,19 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "../deps.ts";
+import { Column, Entity, PrimaryGeneratedColumn } from "../deps.ts";
 
 @Entity()
 export class User {
-    @PrimaryGeneratedColumn()
-    id!: number;
+  @PrimaryGeneratedColumn()
+  id!: number;
 
-    @Column()
-    firstName!: string;
+  @Column()
+  firstName!: string;
 
-    @Column()
-    lastName!: string;
+  @Column()
+  lastName!: string;
 
-    @Column()
-    email!: string;
+  @Column()
+  email!: string;
 
-    @Column()
-    createdAt!: Date;
+  @Column()
+  createdAt!: Date;
 }
