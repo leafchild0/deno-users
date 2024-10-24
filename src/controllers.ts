@@ -25,4 +25,12 @@ export class UserController {
     const userRepository = AppDataSource.getRepository(User);
     return await userRepository.delete(id);
   }
+
+  static async update(id: number, userData: Partial<User>) {
+    const userRepository = AppDataSource.getRepository(User);
+    return await userRepository.update(
+      id,
+      userData
+    );
+  }
 }

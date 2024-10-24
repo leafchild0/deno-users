@@ -1,4 +1,4 @@
-import { Router, Context } from "../deps.ts";
+import { Router, Context, httpErrors } from "../deps.ts";
 import { UserController } from "./controllers.ts";
 
 const router = new Router();
@@ -19,6 +19,21 @@ router
   .delete("/users/:id", async (ctx: Context) => {
     const id = ctx.params.id;
     ctx.response.body = await UserController.deleteById(Number(id));
+  })
+  .put("/users/:id", async (ctx: Context) => {
+    const id = ctx.params.id;
+    const body = ctx.request.body;
+    const userData = await body.json()
+
+    if (userData.id) {
+      //ctx.response.status = 400;
+      //ctx.response.body = 'ID is not allowed for update';
+      throw new httpErrors.BadRequest("ID is not allowed for update");
+    }
+    else {
+      ctx.response.body = await UserController.update(Number(id), userData);
+    }
+
   });
 
 export default router;
