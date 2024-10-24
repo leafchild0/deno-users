@@ -1,11 +1,13 @@
 {
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "dev": "deno run --watch --allow-read --allow-env --allow-sys --allow-ffi --allow-write --allow-net main.ts"
   },
+  "nodeModulesDir": "auto",
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
-    "typeorm": "npm:typeorm@0.3.20",
-    "oak/": "https://deno.land/x/oak@v13.2.5/"
+    "oak": "jsr:@oak/oak@17",
+    "sqlite3": "npm:sqlite3@^5.1.7",
+    "typeorm": "npm:typeorm@0.3.20"
   },
   "compilerOptions": {
     "experimentalDecorators": true,
