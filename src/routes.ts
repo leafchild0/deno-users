@@ -26,8 +26,6 @@ router
     const userData = await body.json()
 
     if (userData.id) {
-      //ctx.response.status = 400;
-      //ctx.response.body = 'ID is not allowed for update';
       throw new httpErrors.BadRequest("ID is not allowed for update");
     }
     else {
